@@ -1,3 +1,5 @@
+import { Category } from './category/category.ts';
+
 export default class Registry {
   private _storage : Storage
   private _key: string;
@@ -9,11 +11,27 @@ export default class Registry {
     this._key = key
   }
 
-  get storage() : Storage {
-    return this._storage
+  private _readStorage() : Category[] {
+    return JSON.parse(this._storage.getItem(this._key) ?? '[]') as Category[]
   }
 
-  get key() : string {
-    return this._key
+  private _writeStorage(categories : Category[]) : void {
+    return this._storage.setItem(this._key, JSON.stringify(categories))
+  }
+
+  public get storage() : Storage {
+    return this._storage;
+  }
+
+  public get key() : string {
+    return this._key;
+  }
+
+  public getAllCategories() : Category[] {
+    return this._readStorage();
+  }
+
+  public setAllCategories(categories : Category[]) : void {
+    this._writeStorage(categories);
   }
 }
