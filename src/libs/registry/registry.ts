@@ -34,4 +34,18 @@ export default class Registry {
   public setAllCategories(categories : Category[]) : void {
     this._writeStorage(categories);
   }
+
+  public getCategoryById(categoryId : string) : Category | undefined {
+    return this._readStorage().filter((categoryEntry) => categoryEntry.id === categoryId)[0]
+  }
+
+  public setCategoryById(
+    categoryId : string,
+    category : Category
+  ) : void {
+    const categories = this._readStorage();
+    categories.filter((categoryEntry) => categoryEntry.id === categoryId)[0] = category;
+
+    this._writeStorage(categories);
+  }
 }
