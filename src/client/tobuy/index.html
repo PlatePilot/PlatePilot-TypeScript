@@ -6,6 +6,26 @@
         <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
         <title>PlatePilot | ToBuy</title>
 
+        <!--
+            Hier einfach immer den relativen Pfad zu der index.ts einbinden. Der Name muss dann abgeändert werden von
+            "index.ts" in "bundle.min.js". Sprich wenn deine Datei unter liegt:
+
+            "./_src/index.ts"
+             ^ ^    ^
+             | |    Index Datei (Einstieg)
+             | Pfad zur Datei
+             Aktuelle Directory
+
+            Dann muss als Pfad in den <script> Tag:
+            
+            "./_src/bundle.min.js"
+             ^ ^    ^
+             | |    Index Datei (Welcher auch in dem <script> Tag angegeben wird)
+             | Pfad zur Datei
+             Aktuelle Directory
+
+            Es ist immer am besten relative Pfade zu verwenden und diese immer mit "./" angeben.
+        -->
         <!-- script -->
         <script type="module" src="./_src/bundle.min.js" defer></script>
 
@@ -13,6 +33,8 @@
         <link rel="stylesheet" href="./_styles/bundle.min.css">
     </head>
     <body>
-        
+        <a href="/">Home</a>
+        <a href="/plates">Plates</a>
+        <a href="/fridge">Fridge</a>
     </body>
 </html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1920 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(7.23276,0,0,7.23276,-5742.06,-3033.01)">
+        <text x="799.102px" y="500.738px" style="font-family:'Poppins-Bold', 'Poppins';font-weight:700;font-size:49.833px;fill:rgb(225,229,225);">Plate Pilot</text>
+    </g>
+    <path d="M100,640C300,740 730,740 930,640" style="fill:none;stroke:rgb(225,229,225);stroke-width:50px;"/>
+    <g transform="matrix(1.04878,0,0,1.4,-14.6341,-286)">
+        <path d="M710,717.5C710,716.12 708.505,715 706.663,715L303.337,715C301.495,715 300,716.12 300,717.5L300,737.5C300,738.88 301.495,740 303.337,740L706.663,740C708.505,740 710,738.88 710,737.5L710,717.5Z" style="stroke:rgb(225,229,225);stroke-width:40.42px;"/>
+    </g>
+    <path d="M1400,280C1500,200 1600,360 1800,280" style="fill:none;stroke:rgb(225,229,225);stroke-width:50px;"/>
+</svg>
