@@ -58,13 +58,92 @@
         -->
         <!-- script -->
         <script type="module" src="./_src/bundle.min.js" defer></script>
+        <script type="module" src="./_src/template.js" defer></script>
 
         <!-- style -->
         <link rel="stylesheet" href="./_styles/bundle.min.css">
+
+        <!-- icons -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
-    <body>
-        <a href="/plates">Plates</a>
-        <a href="/tobuy">ToBuy</a>
-        <a href="/fridge">Fridge</a>
+    <body data-theme="dark">
+        <template src="./_templates/header.html"></template>
+        <div class="overview-wrapper">
+            <div class="overview">
+                <div class="overview-card">
+                    <div class="date-wrapper">
+                        <span>Friday, 12.1.2024</span>
+                    </div>
+                    <div class="heading-wrapper">
+                        <h5>Tomatensalat</h5>
+                    </div>
+                    <div class="ingredients-wrapper">
+                        <span class="heading">Ingredients</span>
+                        <div class="container-wrapper">
+                            <div class="column-line"></div>
+                            <div class="ingredients-container">
+                                <span>Tomaten</span>
+                                <span>Olivenöl</span>
+                                <span>Salz</span>
+                                <span>Pfeffer</span>
+                                <span>Basilikum</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-wrapper">
+                        <div class="view-button">View</div>
+                    </div>
+                </div>
+                <div class="overview-card">
+                    <div class="date-wrapper">
+                        <span>Saturday, 13.1.2024</span>
+                    </div>
+                    <div class="heading-wrapper">
+                        <h5>Nudeln mit Pesto</h5>
+                    </div>
+                    <div class="ingredients-wrapper">
+                        <span class="heading">Ingredients</span>
+                        <div class="container-wrapper">
+                            <div class="column-line"></div>
+                            <div class="ingredients-container">
+                                <span>Nudeln</span>
+                                <span>Pesto</span>
+                                <span>Parmesan</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-wrapper">
+                        <div class="view-button">View</div>
+                    </div>
+                </div>
+                <div class="overview-card">
+                    <div class="date-wrapper">
+                        <span>Sunday, 14.1.2024</span>
+                    </div>
+                    <div class="heading-wrapper">
+                        <h5>Nudelsalat</h5>
+                    </div>
+                    <div class="ingredients-wrapper">
+                        <span class="heading">Ingredients</span>
+                        <div class="container-wrapper">
+                            <div class="column-line"></div>
+                            <div class="ingredients-container">
+                                <span>Nudeln</span>
+                                <span>Rucola</span>
+                                <span>Schinken</span>
+                                <span>Tomaten</span>
+                                <span>Pinienkerne</span>
+                                <span>Mozarella</span>
+                                <span>Pesto-Dressing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-wrapper">
+                        <div class="view-button">View</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <template src="../_templates/footer.html"></template>
     </body>
 </html>

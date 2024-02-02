@@ -1,1 +1,43 @@
+@import "../../_styles/index.scss";
+@import "../../_styles/props.scss";
 
+nav {
+    .item-style-1 {
+        color: var(--dark-text);
+    }
+    
+    .item-4 {
+        color: var(--text);
+        
+        border: 1px solid var(--accent);
+    }
+}
+
+
+.fridge {
+    display: flex;
+
+    .fridge-nav {
+        height: 800px;
+        width: 230px;
+
+        padding: 20px 5px 5px 15px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: .3em;
+
+        h5 {
+            cursor: pointer;
+            padding: 5px;
+            color: var(--text);
+        }
+    }
+
+    .fridge-line {
+        height: 800px;
+        width: 2px;
+        background-color: var(--surface);
+    }
+}

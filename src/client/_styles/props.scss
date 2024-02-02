@@ -1,0 +1,26 @@
+:root {
+    --border-radius: 10px;
+
+    --small-gap: .5em;
+    --gap: 1em;
+    --big-gap: 3em;
+}
+
+
+
+body[data-theme="dark"] {
+    
+    --background: #0f100f;
+
+    --surface: #171617;
+
+    --primary: #96DA9A;
+
+    --secondary: #287254;
+    --dark-secondary: #162d23; 
+
+    --accent: #64C8B4;
+    
+    --text: #fffcec;
+    --dark-text: #87888a;
+}
