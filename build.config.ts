@@ -19,9 +19,13 @@ const copyConfig : esbuild.BuildOptions = {
   outdir: './dist',
   loader: {
     '.html': 'copy',
+    '.svg': 'copy',
+    '.png': 'copy',
+    '.ico': 'copy',
   },
   entryPoints: [
     './src/**/index.html',
+    './src/**/_assets/**'
   ]
 }
 
