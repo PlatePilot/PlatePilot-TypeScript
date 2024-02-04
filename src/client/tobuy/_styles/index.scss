@@ -1,14 +1,162 @@
 @import "../../_styles/index.scss";
 @import "../../_styles/props.scss";
 
-nav {
-    .item-style-1 {
-        color: var(--dark-text);
-    }
-    
-    .item-3 {
-        color: var(--text);
+.nav-wrapper {
+
+    nav {
+        .item-style-1 {
+            color: var(--dark-text);
+        }
         
-        border: 1px solid var(--accent);
+        .item-3 {
+            color: var(--text);
+            
+            border: 2px solid var(--primary);
+        }
+    }
+}
+
+.tobuy {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: var(--gap);
+
+    .main-header {
+        color: var(--dark-text);
+        padding: 15px 0 5px 30px;
+    }
+
+    .tobuy-container {
+        display: flex;
+        overflow: scroll;
+
+        gap: var(--gap);
+
+        padding-left: 20px;
+        margin-bottom: var(--big-gap);
+
+        .tobuy-wrapper {
+            display: flex;
+            flex-direction: column;
+
+            background-color: var(--surface);
+
+            min-width: 300px;
+
+            border-radius: var(--border-radius);
+
+            gap: var(--small-gap);
+
+            height: fit-content;
+
+            .tobuy-header {
+                color: var(--text);
+                padding: 15px 8px 0 15px;
+
+                display: flex;
+                flex-direction: column;
+
+                gap: var(--gap);
+
+                .add-item-tobuy {
+                    display: flex;
+                    align-items: center;
+
+                    gap: var(--small-gap);
+
+                    color: var(--dark-text);
+
+                    cursor: pointer;
+
+                    .bx {
+                        color: var(--primary);
+                        font-size: 22px;
+                    }
+                }
+
+                .add-list-tobuy {
+                    display: flex;
+                    align-items: center;
+
+                    gap: var(--small-gap);
+
+                    color: var(--dark-text);
+
+                    cursor: pointer;
+
+                    padding-bottom: 15px;
+                }
+            }
+
+            .tobuy-item {
+                padding: 6px 15px;
+    
+                display: flex;
+                justify-content: space-between;
+
+
+                .checkbox-text-wrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: 9px;
+
+                    input {
+                        appearance: auto;
+                        background-color: var(--surface);
+                        color: var(--text);
+                        border-radius: 5px;
+                        border: 1px solid var(--dark-text);
+
+                    }
+
+                    span {
+                        color: var(--on-surface);
+                    }
+
+                    .checkbox-wrapper {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center; 
+
+                        .checkbox {
+                            appearance: none;
+                            -webkit-appearance: none;
+                            padding: 6px;
+                            width: 6px;
+                            height: 6px;
+                            border: 2px solid var(--dark-text);
+                            border-radius: 50px;
+                            cursor: pointer;
+        
+                            &:checked {
+                                background-color: var(--accent);
+                                border: 2px solid var(--accent);
+                            }
+                        }
+                    }
+
+                }
+
+                .delete-button {
+                    display: flex;
+                    align-items: center;
+
+                    cursor: pointer;
+
+                    padding: 5px;
+
+                    font-size: 21px;
+
+                    .bx {
+                        color: var(--error);
+                        font-size: 22px;
+                    }
+                }
+            } 
+    
+        }
     }
 }

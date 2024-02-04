@@ -1,43 +1,192 @@
 @import "../../_styles/index.scss";
 @import "../../_styles/props.scss";
 
-nav {
-    .item-style-1 {
-        color: var(--dark-text);
-    }
-    
-    .item-4 {
-        color: var(--text);
+.nav-wrapper {
+
+    nav {
+        .item-style-1 {
+            color: var(--dark-text);
+        }
         
-        border: 1px solid var(--accent);
+        .item-4 {
+            color: var(--text);
+            
+            border: 2px solid var(--primary);
+        }
     }
 }
 
+.category-icon.selected-icon {
+    color: #FFFFFF; 
+  }
+  
+  .category[data-category="all"] .category-icon.selected-icon {
+    color: #FFFFFF; 
+  }
+  
+  .category[data-category="fruits"] .category-icon.selected-icon {
+    color: #FFA500; 
+  }
+  
+  .category[data-category="vegetables"] .category-icon.selected-icon {
+    color: #008000; 
+  }
+  
+  .category[data-category="grains"] .category-icon.selected-icon {
+    color: #F5F5DC; 
+  }
+  
+  .category[data-category="meat"] .category-icon.selected-icon {
+    color: #de5959;
+  }
+  
+  .category[data-category="fish"] .category-icon.selected-icon {
+    color: #4b4be0; 
+  }
+  
+  .category[data-category="dairy"] .category-icon.selected-icon {
+    color: #e4e462; 
+  }
+  
+  .category[data-category="sweets"] .category-icon.selected-icon {
+    color: #FFC0CB; 
+  }
 
 .fridge {
     display: flex;
 
     .fridge-nav {
-        height: 800px;
-        width: 230px;
+        width: 20%;
+        min-width: 105px;
 
-        padding: 20px 5px 5px 15px;
+        padding: 20px 5px 5px 1%;
 
         display: flex;
         flex-direction: column;
 
-        gap: .3em;
+        gap: var(--small-gap);
 
-        h5 {
+        background-color: var(--surface);
+
+        margin: 15px 0 0 1%;
+
+        border: 2px solid var(--dark-2);
+        border-radius: var(--border-radius);
+
+        .category {
             cursor: pointer;
             padding: 5px;
+            color: var(--dark-text);
+
+            width: fit-content;
+
+            border: 2px solid var(--dark-3);
+            border-radius: var(--border-radius);
+
+            display: flex;
+            align-items: center;
+
+            gap: 3px;
+
+            @media (max-width: 845px) {
+                font-size: 14px;
+            }
+            @media (max-width: 745px) {
+                font-size: 12px;
+            }
+            @media (max-width: 645px) {
+                font-size: 10px;
+            }
+
+            .material-symbols-rounded {
+                font-size: 18px;
+            }
+        }
+
+        .add-item-wrapper {
+            margin-top: var(--big-gap);
+            display: flex;
+            justify-content: center;
+        }
+
+        .selected {
             color: var(--text);
+            border: 2px solid var(--dark-2);
         }
     }
 
-    .fridge-line {
-        height: 800px;
-        width: 2px;
-        background-color: var(--surface);
+    ::-webkit-scrollbar {
+        width: 0px;
+    
+        @media (max-width: 420px) {
+            display: none;
+        }
     }
+    
+    ::-webkit-scrollbar-track {
+        background: var(--surface);
+    
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: var(--gray);
+    
+    }
+
+    .fridge-content-wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%; 
+
+        padding-top: var(--gap);
+        padding-bottom: 150px;
+
+        gap: var(--gap);
+
+        max-height: 650px;
+
+        overflow-y: scroll;      
+
+        .fridge-content-container {
+            height: fit-content;
+            width: 90%;
+
+            display: flex;
+            flex-direction: column;
+
+            color: var(--text);
+
+            .fridge-content-header {
+                width: 30%;
+                min-width: fit-content;
+                background-color: var(--surface);
+
+                padding: var(--small-gap) var(--gap) var(--small-gap) var(--gap);
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                gap: var(--small-gap);
+
+                border-radius: var(--border-radius) var(--border-radius) 0 0;
+                border-left: 2px solid var(--dark-2);
+                border-top: 2px solid var(--dark-2);
+                border-right: 2px solid var(--dark-2);
+            }
+
+            .fridge-content {
+                background-color: var(--surface);
+                min-height: 300px;
+
+                padding: var(--small-gap);
+
+                border-radius: 0 var(--border-radius) var(--border-radius) var(--border-radius);
+                border: 2px solid var(--dark-2);
+            }
+
+        }
+    }
+
 }

@@ -1,14 +1,17 @@
 @import "../../_styles/index.scss";
 @import "../../_styles/props.scss";
 
-nav {
-    .item-style-1 {
-        color: var(--dark-text);
-    }
-    
-    .item-2 {
-        color: var(--text);
+.nav-wrapper {
+
+    nav {
+        .item-style-1 {
+            color: var(--dark-text);
+        }
         
-        border: 1px solid var(--accent);
+        .item-2 {
+            color: var(--text);
+            
+            border: 2px solid var(--primary);
+        }
     }
 }

@@ -50,6 +50,10 @@ body {
 
 // defined items start
 
+.bx-plus {
+    color: var(--primary);
+}
+
 .view-button {
     background-color: var(--secondary);
     padding: 5px 15px;
@@ -59,12 +63,32 @@ body {
     cursor: pointer;
 }
 
+.add-button {
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    color: var(--text);
+    background-color: var(--dark-secondary);
+    border: 2px solid var(--primary);
+    padding: 5px 15px;
+}
+
+.save-button {
+    padding: 2px 15px;
+    font-weight: bold;
+    background-color: var(--primary);
+    border-radius: var(--border-radius);
+    color: var(--text-opposite);
+    cursor: pointer;
+    height: fit-content;
+}
+
 // defined items end
 
 header {
     width: 100%;
     height: 64px;
-
+ 
     color: var(--text);
 
     display: flex;
@@ -166,56 +190,73 @@ footer {
 }
 
 
-nav {
-    background-color: var(--surface);
-
-    display: flex;
-
-    height: 48px;
+.nav-wrapper {
     width: 100%;
-
     display: flex;
     justify-content: center;
-    align-items: center;
 
-    gap: 5%;
+    position: sticky;
+    top: var(--small-gap);
 
-    color: var(--text);
+    z-index: 10;
 
-    .item-style-1 {
-        width: 14%;
-        height: 30px;
+    nav {
+        background-color: rgba(50, 50, 50, 0.3);
 
-        color: var(--dark-text);
-        background-color: var(--background);
-    
+        backdrop-filter: blur(10px);
+
         display: flex;
-        justify-content: center;
-        align-items: center; 
     
-        gap: 5px;
+        height: 48px;
+        width: 95%;
 
         border-radius: var(--border-radius);
     
-        border: 1px solid var(--dark-text);
-
-        span {
-            opacity: 1;
-            transition: opacity 0.8s ease;
-
-            @media (max-width:1300px) {
-                opacity: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        gap: 5%;
+        padding: 0 2%;
+    
+        color: var(--text);
+    
+        .item-style-1 {
+            width: 14%;
+            height: 30px;
+    
+            color: var(--dark-text);
+            background-color: var(--background);
+        
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        
+            gap: 5px;
+    
+            border-radius: var(--border-radius);
+        
+            border: 2px solid var(--dark-text);
+    
+            span {
+                opacity: 1;
+                transition: opacity 0.8s ease;
+    
+                @media (max-width:1300px) {
+                    opacity: 0;
+                }
+    
+                @media (max-width:1295px) { 
+                    display: none;
+                }
             }
-
-            @media (max-width:1295px) { 
-                display: none;
+    
+            .bx-list-check {
+                font-size: 22px;
             }
-        }
-
-        .bx-list-check {
-            font-size: 22px;
         }
     }
+
 }
 
 
@@ -224,9 +265,27 @@ nav {
     display: flex;
     justify-content: center;
 
+    ::-webkit-scrollbar {
+        width: 0px;
+    
+        @media (max-width: 420px) {
+            display: none;
+        }
+    }
+    
+    ::-webkit-scrollbar-track {
+        display: none;
+    
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        display: none;
+    
+    }
+
     .overview {
         display: flex;
-        overflow-x: auto;
+        overflow-x: scroll;
         white-space: nowrap;
 
         gap: var(--big-gap);
@@ -234,7 +293,7 @@ nav {
         padding: 0 var(--big-gap);
 
         @media (max-width:1080px) {
-            padding: 0;
+            padding: 0 var(--gap);
         }
 
         .overview-card {
@@ -269,6 +328,8 @@ nav {
                 color: var(--text);
                 display: flex;
                 flex-direction: column;
+
+                padding-left: var(--gap);
 
                 gap: var(--gap);
 
@@ -320,7 +381,7 @@ nav {
                                 left: -15px;
                                 content: '';
                                 width: 1px;
-                                background-color: var(--primary);
+                                background-color: var(--secondary);
                             }
                         }
                     }

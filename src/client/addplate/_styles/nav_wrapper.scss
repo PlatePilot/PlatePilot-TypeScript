@@ -1,0 +1,14 @@
+.nav-wrapper {
+
+  nav {
+      .item-style-1 {
+          color: var(--dark-text);
+      }
+      
+      .item-1 {
+          color: var(--text);
+          
+          border: 2px solid var(--primary);
+      }
+  }
+}

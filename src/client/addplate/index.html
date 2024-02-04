@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=0.9">
         <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
         <title>PlatePilot | Add Plate</title>
 
@@ -18,6 +18,85 @@
     </head>
     <body data-theme="dark">
         <template src="../_templates/header.html"></template>
+        <section class="addplate">
+            <div class="container">
+                <section class="content-wrapper">
+                    <div class="content-header">
+                        <span>Add New Plate</span>
+                        <div class="save-button">Save</div>
+                    </div>
+                    <div class="content">
+                        <div class="subcontent">
+                            <span>Plate Name</span>
+                            <input type="text" alt="Enter name of your Plate">
+                        </div>
+                        <div class="subcontent">
+                            <span>Date</span>
+                            <input type="date" alt="Choose Date">
+                        </div>
+                        <div class="subcontent-small">
+                            <span class="subcontent-head">Ingredients</span>
+                            <div class="add-amount-wrapper">
+                                <div class="add-button-2"><i class='bx bx-plus'></i><span>Add Ingredient</span></div>
+                                <div class="amount-button">Amount</div>
+                            </div>
+                            <div class="subcontent-items">
+                                <span>ddd</span>
+                                <span>ddd</span>
+                                <span>ddd</span>
+                            </div>
+                        </div>
+                        <div class="subcontent-small">
+                            <span class="subcontent-head">Drinks</span>
+                            <div class="add-amount-wrapper">
+                                <div class="add-button-2"><i class='bx bx-plus'></i><span>Add Drink</span></div>
+                                <div class="amount-button">Amount</div>
+                            </div>
+                            <div class="subcontent-items"></div>
+                        </div>
+                        <div class="subcontent-small">
+                            <span class="subcontent-head">Equipment</span>
+                            <div class="add-amount-wrapper">
+                                <div class="add-button-2"><i class='bx bx-plus'></i><span>Add Equipment</span></div>
+                                <div class="amount-button">Amount</div>
+                            </div>
+                            <div class="subcontent-items"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="addplate-button-container">
+                    <div class="connector"></div>
+                    <div class="addplate-button"><i class='bx bx-plus'></i><span>Add Plate Descirption</span></div>
+                </section>
+                <section class="content-wrapper">
+                    <div class="content-header">
+                        <span>Plate Description</span>
+                    </div>
+                    <div class="description-content">
+                        <div class="description-content-header">
+                            <div class="header">
+                                <span><span class="select-text">Normal text</span><i class='bx bx-chevron-down'></i></span>
+                                <span><i class='bx bx-align-left'></i><i class='bx bx-chevron-down'></i></span>
+                                <span><i class='bx bx-palette'></i><i class='bx bx-chevron-down'></i></span>
+                            </div>
+                            <div class="header">
+                                <div class="header-2">
+                                    <span><i class='bx bx-bold'></i></span>
+                                    <span><i class='bx bx-italic'></i></span>
+                                    <span><i class='bx bx-underline'></i></span>
+                                    <span><i class='bx bx-strikethrough'></i></span>
+                                    <span><i class='bx bx-code'></i></span>
+                                </div>
+                                <div class="header-2">
+                                    <span><i class='bx bx-undo'></i></span>
+                                    <span><i class='bx bx-redo'></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
         <template src="../_templates/footer.html"></template>
     </body>
 </html>

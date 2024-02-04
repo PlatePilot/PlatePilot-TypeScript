@@ -22,5 +22,33 @@ body[data-theme="dark"] {
     --accent: #64C8B4;
     
     --text: #fffcec;
+    --text-opposite: #000000; 
     --dark-text: #87888a;
+
+    --dark-2: #454545;
+    --dark-3: #282727;
+
+    --error: #b00020;
+}
+
+body[data-theme="white"] {
+    
+    --background: #f8f8f8;
+
+    --surface: #ffffff;
+
+    --primary: #96DA9A;
+
+    --secondary: #287254;
+    --dark-secondary: #162d23; 
+
+    --accent: #64C8B4;
+    
+    --text: #000000; 
+    --dark-text: #ececec;
+
+    --dark-2: #454545;
+    --dark-3: #282727;
+
+    --error: #b00020;
 }
