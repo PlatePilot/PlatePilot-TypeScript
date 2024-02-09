@@ -198,10 +198,13 @@ saveButtonModal.addEventListener('click', () => {
       newExpirationText.innerHTML = "<i class='bx bx-info-circle'></i>";
       newItemDiv.appendChild(newExpirationText);
 
-      const newExpirationContent = document.createElement("span");
-      newExpirationContent.classList.add("expiration-content");
-      newExpirationContent.innerHTML = expirationValue;
-      newExpirationText.appendChild(newExpirationContent);
+      newExpirationText.setAttribute("data-expiration", expirationValue);
+      
+
+      // const newExpirationContent = document.createElement("span");
+      // newExpirationContent.classList.add("expiration-content");
+      // newExpirationContent.innerHTML = expirationValue;
+      // newExpirationText.appendChild(newExpirationContent);
     }
 
     const selectedCategoryCard = document.querySelector(".category-card.selected");
