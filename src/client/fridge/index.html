@@ -7,7 +7,7 @@
         <title>PlatePilot | Fridge</title> 
 
         <!-- script -->
-        <script type="module" src="./_src/bundle.min.js" defer></script>
+        <script type="module" src="./_src/bundle.min.js" defer></script> 
         <script type="module" src="../_src/template.js" defer></script>
 
         <!-- style -->
@@ -18,7 +18,76 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,-25" /> 
     </head>
     <body data-theme="dark">
-        <template src="../_templates/header.html"></template>
+        <template src="../_templates/header.html"></template> 
+        <section class="fridge-modal">
+            <div class="modal-content-wrapper">
+                <div class="modal-content-container">
+                    <div class="modal-content-header">
+                        <span class="modal-header-text">Add Item</span>
+                        <div id="savebuttonmodal" class="save-button">Save</div>
+                    </div>
+                    <div class="modal-content">
+                        <div class="modal-content-item-group">
+                            <div class="modal-content-item">
+                                <span class="modal-item-header">Name</span>
+                                <input type="text" class="modal-input name">
+                            </div>
+                            <div class="modal-content-item">
+                                <span class="modal-item-header">Amount</span>
+                                <div class="amount-input-wrapper">
+                                    <input type="number" class="amount">
+                                    <div id="dropdown-amount-button" class="dropdown-button"><i class="bx bx-chevron-down"></i></div>
+                                </div>
+                                <div id="amount-dropdown-menu" class="amount-dropdown">
+                                    <div class="dropdown-item">items</div>
+                                    <div class="dropdown-item">mg</div>
+                                    <div class="dropdown-item">g</div>
+                                    <div class="dropdown-item">kg</div>
+                                    <div class="dropdown-item">oz</div>
+                                    <div class="dropdown-item last-dropdown-item">lb</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-content-item-group">
+                            <div class="modal-content-item">
+                                <span class="modal-item-header">Category</span>
+                                <div class="category-card-wrapper">
+                                    <div class="category-card" data-category="fruits"><span class="category-card-text">Fruits</span><span class="material-symbols-rounded category-icon">nutrition</span></div>
+                                    <div class="category-card" data-category="vegetables"><span class="category-card-text">Vegetables</span><span class="material-symbols-rounded category-icon">grass</span></div>
+                                    <div class="category-card" data-category="grains"><span class="category-card-text">Grains</span><i class='bx bx-bowl-rice category-icon'></i></div>
+                                    <div class="category-card" data-category="meat"><span class="category-card-text">Meat</span><span class="material-symbols-rounded category-icon">egg_alt</span></div>
+                                    <div class="category-card" data-category="fish"><span class="category-card-text">Fish</span><span class="material-symbols-rounded category-icon">set_meal</span></div>
+                                    <div class="category-card" data-category="dairy"><span class="category-card-text">Dairy</span><i class='bx bx-cheese category-icon'></i></div>
+                                    <div class="category-card" data-category="sweets"><span class="category-card-text">Sweets</span><span class="material-symbols-rounded category-icon">icecream</span></div>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="modal-content-item-group">
+                            <div class="modal-content-item">
+                                <span class="modal-item-header">Expiration Date</span>
+                                <div class="expiration-wrapper">
+                                    <div class="expiration-content">
+                                        <input type="date">
+                                    </div>
+                                    <!-- <div class="expiration-content">
+                                        <span class="expiration-text">Day</span>
+                                        <div class="expiration-input day"></div>
+                                    </div>
+                                    <div class="expiration-content">
+                                        <span class="expiration-text">Month</span>
+                                        <div class="expiration-input month"></div>
+                                    </div>
+                                    <div class="expiration-content">
+                                        <span class="expiration-text">Year</span>
+                                        <div class="expiration-input year"></div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="fridge">
             <div class="fridge-nav">
                 <span class="category" data-category="all"><span class="material-symbols-rounded category-icon">clear_all</span>All Items</span>
@@ -30,13 +99,13 @@
                 <span class="category" data-category="dairy"><i class='bx bx-cheese category-icon'></i>Dairy</span>
                 <span class="category" data-category="sweets"><span class="material-symbols-rounded category-icon">icecream</span>Sweets</span>
                 <div class="add-item-wrapper">
-                    <div class="add-button">Add Item</div>
+                    <div id="addmodalitembutton" class="add-button">Add Item</div>
                 </div>
             </div>
             <div class="fridge-content-wrapper">
                 <div class="fridge-content-container" data-category="all">
                     <div class="fridge-content-header">
-                        <h5>All Items</h5>
+                        <span class="material-symbols-rounded category-icon-all">clear_all</span><h5>All Items</h5>
                     </div>
                     <div class="fridge-content">
 
@@ -44,7 +113,7 @@
                 </div>
                 <div class="fridge-content-container" data-category="fruits">
                     <div class="fridge-content-header">
-                        <span class="material-symbols-rounded"style="color: #FFA500; ">nutrition</span><h5>Fruits</h5>
+                        <span class="material-symbols-rounded category-icon-fruits">nutrition</span><h5>Fruits</h5>
                     </div>
                     <div class="fridge-content">
 
@@ -52,7 +121,7 @@
                 </div>
                 <div class="fridge-content-container" data-category="vegetables">
                     <div class="fridge-content-header">
-                        <h5>Vegetables</h5>
+                        <span class="material-symbols-rounded category-icon-vegetables">grass</span><h5>Vegetables</h5>
                     </div>
                     <div class="fridge-content">
 
@@ -60,7 +129,7 @@
                 </div>
                 <div class="fridge-content-container" data-category="grains">
                     <div class="fridge-content-header">
-                        <h5>Grains</h5>
+                        <i class='bx bx-bowl-rice category-icon-grains'></i><h5>Grains</h5>
                     </div>
                     <div class="fridge-content">
 
@@ -68,7 +137,7 @@
                 </div>
                 <div class="fridge-content-container" data-category="meat">
                     <div class="fridge-content-header">
-                        <h5>Meat</h5>
+                        <span class="material-symbols-rounded category-icon-meat">egg_alt</span><h5>Meat</h5>
                     </div>
                     <div class="fridge-content">
 
@@ -76,7 +145,7 @@
                 </div>
                 <div class="fridge-content-container" data-category="fish">
                     <div class="fridge-content-header">
-                        <h5>Fish</h5>
+                        <span class="material-symbols-rounded category-icon-fish">set_meal</span><h5>Fish</h5>
                     </div>
                     <div class="fridge-content">
 
@@ -84,7 +153,7 @@
                 </div>
                 <div class="fridge-content-container" data-category="dairy">
                     <div class="fridge-content-header">
-                        <h5>Dairy</h5>
+                        <i class='bx bx-cheese category-icon-dairy'></i><h5>Dairy</h5>
                     </div>
                     <div class="fridge-content">
 
@@ -92,7 +161,7 @@
                 </div>
                 <div class="fridge-content-container" data-category="sweets">
                     <div class="fridge-content-header">
-                        <h5>Sweets</h5>
+                        <span class="material-symbols-rounded category-icon-sweets">icecream</span><h5>Sweets</h5>
                     </div>
                     <div class="fridge-content">
 

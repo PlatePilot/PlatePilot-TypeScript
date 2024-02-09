@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=0.9">
-        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=0.9"> 
+        <link rel="shortcut icon" href="" type="image/x-icon">
         <title>PlatePilot | Add Plate</title>
 
         <!-- script -->
@@ -66,33 +66,35 @@
                 </section>
                 <section class="addplate-button-container">
                     <div class="connector"></div>
-                    <div class="addplate-button"><i class='bx bx-plus'></i><span>Add Plate Descirption</span></div>
+                    <div id="addplatedescription" class="addplate-button"><i class='bx bx-plus'></i><span>Add Plate Descirption</span></div>
                 </section>
-                <section class="content-wrapper">
+                <section class="content-wrapper plate-description">
                     <div class="content-header">
                         <span>Plate Description</span>
+                        <div id="closeplatedescription" class="close-button">Close</div>
                     </div>
-                    <div class="description-content">
-                        <div class="description-content-header">
-                            <div class="header">
-                                <span><span class="select-text">Normal text</span><i class='bx bx-chevron-down'></i></span>
-                                <span><i class='bx bx-align-left'></i><i class='bx bx-chevron-down'></i></span>
-                                <span><i class='bx bx-palette'></i><i class='bx bx-chevron-down'></i></span>
-                            </div>
-                            <div class="header">
-                                <div class="header-2">
-                                    <span><i class='bx bx-bold'></i></span>
-                                    <span><i class='bx bx-italic'></i></span>
-                                    <span><i class='bx bx-underline'></i></span>
-                                    <span><i class='bx bx-strikethrough'></i></span>
-                                    <span><i class='bx bx-code'></i></span>
+                    <div class="description">
+                        <section class="des-content">
+                            <div class="add-step-button"><i class='bx bx-plus'></i>Add Step</div>
+                        </section>
+                        <section class="des-content">
+                            <div class="step">
+                                <div class="step-info side-info">
+                                    <div class="step-head">1. Step</div>
+                                    <small class="add-info-button"><i class='bx bx-plus'></i>Add Heading</small>
+                                    <small class="add-info-button"><i class='bx bx-plus'></i>Add Time</small>
+                                    <small class="add-info-button"><i class='bx bx-plus'></i>Add Time of Day</small>
                                 </div>
-                                <div class="header-2">
-                                    <span><i class='bx bx-undo'></i></span>
-                                    <span><i class='bx bx-redo'></i></span>
+                                <div class="step-info step-text">
+                                    <div class="step-head">
+                                        <span class="step-head-span">1. Step Description</span>
+                                        <small class="add-info-button button-shrink"><i class='bx bx-plus'></i>Add Time</small>
+                                        <small class="add-info-button button-shrink"><i class='bx bx-plus'></i>Add Ingredient</small>
+                                        <span class="bx-icon"><i class='bx bx-bold'></i></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                     </div>
                 </section>
             </div>

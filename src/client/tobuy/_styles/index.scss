@@ -16,9 +16,13 @@
     }
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .tobuy {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
 
     width: 100%;
 
@@ -31,7 +35,7 @@
 
     .tobuy-container {
         display: flex;
-        overflow: scroll;
+        overflow-x: scroll;
 
         gap: var(--gap);
 
