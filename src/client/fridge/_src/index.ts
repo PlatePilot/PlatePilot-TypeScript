@@ -97,15 +97,18 @@ dropdownAmountButton?.addEventListener('click', () => {
   }
 });
 
+
 const dropdownItems = amountDropdown?.getElementsByClassName("dropdown-item");
+
+let selectedItemText: string | null = null;
 
 if (dropdownItems) {
   for (const item of dropdownItems) {
     item.addEventListener("click", (event) => {
-      const selectedItemText = item.textContent;
+      selectedItemText = item.textContent || "";
       const newSpan = document.createElement("span");
       newSpan.textContent = selectedItemText;
-      newSpan.classList.add('dropdown-text')
+      newSpan.classList.add('dropdown-text');
 
       dropdownAmountButton.innerHTML = '';
       dropdownAmountButton.appendChild(newSpan);
@@ -146,3 +149,92 @@ categoryCards.forEach((card) => {
     }
   });
 });
+
+
+
+
+
+
+
+
+
+const saveButtonModal = document.getElementById("savebuttonmodal")!;
+const nameInput = document.getElementById("name-fridge-modal") as HTMLInputElement;
+const amountInput = document.getElementById("amount-fridge-modal") as HTMLInputElement;
+const modalExpirationInput = document.getElementById("modal-expiration") as HTMLInputElement;
+
+saveButtonModal.addEventListener('click', () => {
+  const nameValue = nameInput.value.trim();
+
+  if (nameValue !== "") {
+    const amountValue = amountInput.value.trim();
+    const expirationValue = modalExpirationInput.value;
+
+    const displaySelectedItemText = (selectedItemText && selectedItemText !== "items") ? selectedItemText : "";
+
+    const newItemDiv = document.createElement("div");
+    newItemDiv.classList.add("fridge-item")
+
+    if (amountValue !== "") {
+      const newAmountSpan = document.createElement("span");
+      newAmountSpan.innerHTML = amountValue;
+      newItemDiv.appendChild(newAmountSpan);
+    }
+
+    if (displaySelectedItemText !== "") {
+      const newItemText = document.createElement("span");
+      newItemText.innerHTML = displaySelectedItemText;
+      newItemDiv.appendChild(newItemText);
+    }
+
+    const newNameSpan = document.createElement("span");
+    newNameSpan.innerHTML = nameValue;
+
+    newItemDiv.appendChild(newNameSpan);
+
+    if (expirationValue !== "") {
+      const newExpirationText = document.createElement("span");
+      newExpirationText.classList.add("expiration-wrapper");
+      newExpirationText.innerHTML = "<i class='bx bx-info-circle'></i>";
+      newItemDiv.appendChild(newExpirationText);
+
+      const newExpirationContent = document.createElement("span");
+      newExpirationContent.classList.add("expiration-content");
+      newExpirationContent.innerHTML = expirationValue;
+      newExpirationText.appendChild(newExpirationContent);
+    }
+
+    const selectedCategoryCard = document.querySelector(".category-card.selected");
+
+    if (selectedCategoryCard) {
+      const selectedCategory = selectedCategoryCard.getAttribute("data-category");
+
+      const categoryContainer = document.querySelector(`.fridge-content-container[data-category='${selectedCategory}']`);
+
+      if (categoryContainer) {
+        const categoryContent = categoryContainer.querySelector(".fridge-content");
+
+        if (categoryContent) {
+          const newItemDivClone = newItemDiv.cloneNode(true);
+          categoryContent.appendChild(newItemDivClone);
+        }
+      }
+    }
+
+    const allCategoryContainer = document.querySelector(".fridge-content-container[data-category='all']");
+
+    if (allCategoryContainer) {
+      const allCategoryContent = allCategoryContainer.querySelector(".fridge-content");
+
+      if (allCategoryContent) {
+        allCategoryContent.appendChild(newItemDiv);
+      }
+    }
+  }
+
+  nameInput.value = "";
+  amountInput.value = "";
+  modalExpirationInput.value = "";
+});
+
+
