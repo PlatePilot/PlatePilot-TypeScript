@@ -104,7 +104,7 @@ let selectedItemText: string | null = null;
 
 if (dropdownItems) {
   for (const item of dropdownItems) {
-    item.addEventListener("click", (event) => {
+    item.addEventListener("click", () => {
       selectedItemText = item.textContent || "";
       const newSpan = document.createElement("span");
       newSpan.textContent = selectedItemText;

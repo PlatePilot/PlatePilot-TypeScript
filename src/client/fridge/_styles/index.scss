@@ -152,54 +152,7 @@
                             border-bottom-left-radius: 0;
 
                             padding: 0 var(--small-gap) 0 var(--small-gap);
-
-                            .amount {
-                                width: 70px;
-                                border-top-left-radius: 0;
-                                border-bottom-left-radius: 0;
-
-                                background-color: transparent;
-                                color: var(--dark-text);
-                                padding: var(--small-gap);
-                                border: none;
-
-                                outline: none;
-                            }
-                        }
-
-                        .amount-dropdown {
-                            color: var(--text);
-
-                            display: none;
-
-                            position: absolute;
-                            top: 115px;
-
-                            display: none;
-                            flex-direction: column;
-
-                            background-color: var(--surface);
-
-                            border: 2px solid var(--dark-2);
-                            border-radius: var(--border-radius);
-
-                            margin-left: 30px;
-                            margin-top: 10px;
-
-                            user-select: none;
-
-                            .dropdown-item {
-                                cursor: pointer;
-                                padding: var(--small-gap);
-                                border-bottom: 2px solid var(--dark-3);
-                            }
-
-                            .last-dropdown-item {
-                                border: none;
-                            }
-                        }
-
-                        
+                        }                        
 
                         .expiration-wrapper-modal {
                             display: flex;

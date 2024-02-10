@@ -5,7 +5,7 @@
 
     nav {
         .item-style-1 {
-            color: var(--dark-text);
+            color: var(--dark-text); 
         }
         
         .item-3 {
@@ -55,6 +55,86 @@
             gap: var(--small-gap);
 
             height: fit-content;
+            
+            padding-bottom: var(--small-gap);
+
+            .tobuy-content {
+                display: flex;
+                flex-direction: column;
+                gap: var(--small-gap);
+
+                .tobuy-item {
+                    padding: 6px 15px;
+                    margin: 0 var(--small-gap);
+        
+                    display: flex;
+                    justify-content: space-between;
+    
+                    background-color: var(--dark-4);
+    
+                    color: var(--text);
+    
+                    border-radius: var(--border-radius);
+    
+                    .checkbox-text-wrapper {
+                        display: flex;
+                        align-items: center;
+                        gap: 9px;
+    
+                        input {
+                            appearance: auto;
+                            background-color: var(--surface);
+                            color: var(--text);
+                            border-radius: 5px;
+                            border: 1px solid var(--dark-text);
+    
+                        }
+    
+                        span {
+                            color: var(--on-surface);
+                        }
+    
+                        .checkbox-wrapper {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center; 
+    
+                            .checkbox {
+                                appearance: none;
+                                -webkit-appearance: none;
+                                padding: 6px;
+                                width: 6px;
+                                height: 6px;
+                                border: 2px solid var(--dark-text);
+                                border-radius: 50px;
+                                cursor: pointer;
+            
+                                &:checked {
+                                    background-color: var(--secondary);
+                                    border: 2px solid var(--secondary);
+                                }
+                            }
+                        }
+    
+                    }
+    
+                    .delete-button {
+                        display: flex;
+                        align-items: center;
+    
+                        cursor: pointer;
+    
+                        padding: 5px;
+    
+                        font-size: 21px;
+    
+                        .bx {
+                            color: var(--error);
+                            font-size: 22px;
+                        }
+                    }
+                } 
+            }
 
             .tobuy-header {
                 color: var(--text);
@@ -94,73 +174,6 @@
                     padding-bottom: 15px;
                 }
             }
-
-            .tobuy-item {
-                padding: 6px 15px;
-    
-                display: flex;
-                justify-content: space-between;
-
-
-                .checkbox-text-wrapper {
-                    display: flex;
-                    align-items: center;
-                    gap: 9px;
-
-                    input {
-                        appearance: auto;
-                        background-color: var(--surface);
-                        color: var(--text);
-                        border-radius: 5px;
-                        border: 1px solid var(--dark-text);
-
-                    }
-
-                    span {
-                        color: var(--on-surface);
-                    }
-
-                    .checkbox-wrapper {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center; 
-
-                        .checkbox {
-                            appearance: none;
-                            -webkit-appearance: none;
-                            padding: 6px;
-                            width: 6px;
-                            height: 6px;
-                            border: 2px solid var(--dark-text);
-                            border-radius: 50px;
-                            cursor: pointer;
-        
-                            &:checked {
-                                background-color: var(--accent);
-                                border: 2px solid var(--accent);
-                            }
-                        }
-                    }
-
-                }
-
-                .delete-button {
-                    display: flex;
-                    align-items: center;
-
-                    cursor: pointer;
-
-                    padding: 5px;
-
-                    font-size: 21px;
-
-                    .bx {
-                        color: var(--error);
-                        font-size: 22px;
-                    }
-                }
-            } 
-    
         }
     }
 }

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head> 
         <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=0.9"> 
         <link rel="shortcut icon" href="" type="image/x-icon">
@@ -37,30 +37,41 @@
                         <div class="subcontent-small">
                             <span class="subcontent-head">Ingredients</span>
                             <div class="add-amount-wrapper">
-                                <div class="add-button-2"><i class='bx bx-plus'></i><span>Add Ingredient</span></div>
-                                <div class="amount-button">Amount</div>
+                                <div id="add-ingredient-button" class="add-button-2"><i class='bx bx-plus'></i><span>Add Ingredient</span></div>
+                                <input alt="amount" type="number" class="amount add-amount">
+                                <div id="dropdown-amount-button" class="dropdown-button"><i class="bx bx-chevron-down"></i></div>
                             </div>
-                            <div class="subcontent-items">
-                                <span>ddd</span>
-                                <span>ddd</span>
-                                <span>ddd</span>
+                            <div id="amount-dropdown-menu" class="amount-dropdown">
+                                <div class="dropdown-item">items</div>
+                                <div class="dropdown-item">mg</div>
+                                <div class="dropdown-item">g</div>
+                                <div class="dropdown-item">kg</div>
+                                <div class="dropdown-item">oz</div>
+                                <div class="dropdown-item last-dropdown-item">lb</div>
+                            </div>
+                            <div class="subcontent-items sub-ingredient">
+                                <span class="subcontent-item">ddd</span>
                             </div>
                         </div>
                         <div class="subcontent-small">
                             <span class="subcontent-head">Drinks</span>
                             <div class="add-amount-wrapper">
-                                <div class="add-button-2"><i class='bx bx-plus'></i><span>Add Drink</span></div>
-                                <div class="amount-button">Amount</div>
+                                <div id="add-drink-button" class="add-button-2"><i class='bx bx-plus'></i><span>Add Drink</span></div>
+                                <input alt="amount" type="number" class="amount add-amount">
                             </div>
-                            <div class="subcontent-items"></div>
+                            <div class="subcontent-items sub-drink">
+
+                            </div>
                         </div>
                         <div class="subcontent-small">
                             <span class="subcontent-head">Equipment</span>
                             <div class="add-amount-wrapper">
-                                <div class="add-button-2"><i class='bx bx-plus'></i><span>Add Equipment</span></div>
-                                <div class="amount-button">Amount</div>
+                                <div id="add-equipment-button" class="add-button-2"><i class='bx bx-plus'></i><span>Add Equipment</span></div>
+                                <input alt="amount" type="number" class="amount add-amount">
                             </div>
-                            <div class="subcontent-items"></div>
+                            <div class="subcontent-items sub-equipment">
+
+                            </div>
                         </div>
                     </div>
                 </section>
