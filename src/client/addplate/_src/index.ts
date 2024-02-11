@@ -68,47 +68,87 @@ dropdownAmountButton?.addEventListener('click', () => {
 
 // create subcontent-item
 
-const addIngredientButton = document.getElementById("add-ingredient-button")
+function createInputField(): HTMLInputElement {
+  const inputField = document.createElement("input");
+  inputField.classList.add("subcontent-input");
 
-addIngredientButton?.addEventListener("click", () => {
- //create input
- //take input value
- //innerhtml from newItem = input value
- // wie bei tobuy list
+  inputField.addEventListener("blur", () => {
+      if (!inputField.value.trim()) {
+          destroyInputField(inputField);
+      }
+  });
 
+  inputField.addEventListener("change", () => {
+      if (inputField.value.trim()) {
+          createSpan(inputField.value.trim(), inputField.parentElement);
+          destroyInputField(inputField);
+      }
+  });
 
-  const newItem = document.createElement("span");
-  newItem.className = "subcontent-item";
-  
-  const ingredientSubcontent = document.querySelector("sub-ingredient");
-  ingredientSubcontent?.appendChild(newItem);
-});
+  return inputField;
+}
 
+function createSpan(text: string, subcontent: HTMLElement | null): void {
+  if (!subcontent) {
+    return;
+  }
 
-const addDrinkButton = document.getElementById("add-drink-button")
+  const span = document.createElement("span");
+  span.classList.add("subcontent-item");
+  span.textContent = text;
 
-addDrinkButton?.addEventListener("click", () => {
+  span.addEventListener("click", () => {
+      const editInput = createInputField();
+      editInput.value = text;
 
+      editInput.addEventListener("blur", () => {
+        replaceElement(editInput, span);
+      });
+      editInput.addEventListener("change", () => {
+          if (editInput.value.trim()) {
+              span.textContent = editInput.value.trim();
+          }
+      });
 
+      replaceElement(span, editInput);
+      editInput.focus();
+  });
 
-  const newItem = document.createElement("span");
-  newItem.className = "subcontent-item";
-  
-  const drinkSubcontent = document.querySelector("sub-drink");
-  drinkSubcontent?.appendChild(newItem);
-});
+  subcontent.appendChild(span);
+}
 
+function destroyInputField(inputField: HTMLInputElement): void {
+  inputField.removeEventListener("blur", () => {});
+  inputField.removeEventListener("change", () => {});
+  inputField.remove();
+}
 
+function replaceElement(oldElement: HTMLElement, newElement: HTMLElement): void {
+  oldElement.parentNode?.replaceChild(newElement, oldElement);
+}
 
-const addEquipmentButton = document.getElementById("add-equipment-button")
+function initializeAddButton(
+  addButton: HTMLDivElement | null,
+  subcontent: HTMLElement
+): void {
+  addButton?.addEventListener("click", () => {
+    const inputField = createInputField();
+    subcontent?.appendChild(inputField);
+    inputField.focus();
+  });
+}
 
-addEquipmentButton?.addEventListener("click", () => {
+// ingredient
+const addIngredientButton = document.getElementById("add-ingredient-button") as HTMLDivElement;
+const ingredientSubcontent = document.querySelector(".sub-ingredient") as HTMLElement;
+initializeAddButton(addIngredientButton, ingredientSubcontent);
 
+// drink
+const addDrinkButton = document.getElementById("add-drink-button") as HTMLDivElement;
+const drinkSubcontent = document.querySelector(".sub-drink") as HTMLElement;
+initializeAddButton(addDrinkButton, drinkSubcontent);
 
-
-  const newItem = document.createElement("span");
-  newItem.className = "subcontent-item";
-  
-  const equipmentSubcontent = document.querySelector("sub-equipment");
-  equipmentSubcontent?.appendChild(newItem);
-});
+// equipment
+const addEquipmentButton = document.getElementById("add-equipment-button") as HTMLDivElement;
+const equipmentSubcontent = document.querySelector(".sub-equipment") as HTMLElement;
+initializeAddButton(addEquipmentButton, equipmentSubcontent);

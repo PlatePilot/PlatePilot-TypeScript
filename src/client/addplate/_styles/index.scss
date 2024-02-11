@@ -5,15 +5,15 @@
 .addplate {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
     width: 100%;
 
-    padding: 30px;
+    padding: var(--gap);
 
     height: 100%;
 
     .container {
-        width: 100%;
+        width: 98%;
 
         height: 100%;
 
@@ -57,140 +57,266 @@
 
             .content {
                 display: flex;
-                flex-wrap: wrap;
-
+                flex-direction: column;
                 padding: var(--gap);
+                gap: var(--gap);
 
-                gap: 5%;
-
-                @media (max-width:900px) {
-                    flex-wrap: nowrap;
-                    flex-direction: column;
-                }
-
-                .subcontent {
+                .top-wrapper {
                     display: flex;
-                    flex-direction: column;
-
-                    gap: var(--small-gap);
-
-                    width: 47.5%;
-                    min-width: 250px;
-
-                    padding-bottom: var(--gap);
-
-                    @media (max-width:900px) {
-                        width: 80%;
-                    }
-
-                    span {
-                        color: var(--text);
-                    }
-
-                    input {
-                        background-color: transparent;
-                        border: 2px solid var(--dark-3);
-                        border-radius: var(--border-radius);
-
-                        padding: 10px;
-
-                        color: var(--dark-text);
-                    }
-                }
-
-                .subcontent-small {
-                    display: flex;
-                    flex-direction: column;
-
-                    gap: var(--small-gap);
-
-                    width: 30%;
-                    min-width: 200px;
-
-                    padding-bottom: var(--gap);
-
-                    .subcontent-head {
-                        color: var(--text);
-                    }
-
-                    .add-amount-wrapper {
-                        display: flex;
-                        align-items: center;
-
-                        min-width: 250px;
-
-                        border: 2px solid var(--dark-3);
-                        border-radius: var(--border-radius);
-
-                        padding: 0 var(--small-gap);
-
-                        .add-button-2 {
-                            display: flex;
-                            gap: var(--small-gap);
+                    gap: var(--gap);
+                    flex-wrap: wrap;
                     
-                        
-                            padding: 5px;
-
-                            width: 100%;
-
-                            cursor: pointer;
-                        
-                            span {
-                                color: var(--dark-text);
-                            }
-                        
-                            .bx {
-                                display: flex;
-                                align-items: center;
-                            }
-                        }
-                    }
-
-                    .subcontent-items {
+                    .sub-group {
                         display: flex;
                         flex-direction: column;
-
-                        gap: var(--small-gap);
                         color: var(--text);
+                        gap: 4px;
 
-                        padding-left: var(--small-gap);
+                        .sub-group-input {
+                            outline: none;
+                            background-color: transparent;
+                            border: 2px solid var(--dark-3);
+                            border-radius: var(--border-radius);
+                            padding: 8px var(--small-gap);
+                            color: var(--text);
+                        }
+                    }
+                }
 
-                        & > * {
-                            position: relative;
+                .time-difficulty-wrapper {
+                    display: flex;
+                    flex-direction: column;
+
+                    gap: var(--gap);
+                    padding: var(--gap);
+
+                    border-radius: var(--border-radius);
+                    background-color: var(--dark-4);
+
+                    .wrapper {
+                        display: grid;
+                        gap: var(--gap);
+                        grid-template-columns: repeat(2, 1fr);
+
+                        @media (max-width: 550px) {
+                            width: 100%;
                             display: flex;
-                            gap: var(--gap);
+                            flex-wrap: wrap;
+                        }
+                        
+                        .sub-group {
+                            display: flex;
+                            flex-direction: column;
+                            color: var(--text);
+                            gap: 4px;
+                            width: 100%;
 
-                            &::before {
-                                position: absolute;
-                                top: calc(var(--small-gap) * -0.5);
-                                bottom: calc(var(--small-gap) * -0.5);
-                                left: -15px;
-                                content: '';
-                                width: 1px;
-                                background-color: var(--secondary);
+                            .sub-group-header {
+                                display: flex;
+                                align-items: center;
+                                gap: var(--small-gap);
+
+                                .bx {
+                                    color: var(--primary);
+                                }
+                            }
+
+                            .sub-group-input-wrapper {
+                                display: flex;
+                                align-items: center;
+                                background-color: var(--dark-4);
+                                border: 2px solid var(--dark-3);
+                                border-radius: var(--border-radius);
+                                padding: 8px var(--small-gap);
+                                color: var(--dark-text);
+                                font-size: 14px;
+
+                                .sub-group-input {
+                                    width: 100%;
+                                    outline: none;
+                                    background-color: var(--dark-4);
+                                    border: none;
+                                    color: var(--dark-text);
+                                    font-size: 16px;
+                                }
+
+                                span {
+                                    padding-left: 30px;
+                                }
                             }
                         }
+                    }
+                }
 
-                        .subcontent-item {
-                            color: var(--text);
-                            background-color: var(--dark-4);
-                            border-radius: var(--border-radius);
-                            padding: 2px var(--gap) 2px 14px;
-                            width: fit-content;
+                .bottom-wrapper {
+                    display: flex;
+                    gap: var(--gap);
+                    flex-wrap: wrap;
+                    
+                    .column-wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        color: var(--text);
+                        gap: var(--small-gap);
 
+                        .sub-group {
                             display: flex;
-                            gap: var(--small-gap);
-
-                            margin-left: 29px;
+                            flex-direction: column;
+                            color: var(--text);
+                            width: 0;
+                            min-width: 130px;
+                            gap: 4px;
+    
+                            .sub-group-input {
+                                outline: none;
+                                background-color: transparent;
+                                border: 2px solid var(--dark-3);
+                                border-radius: var(--border-radius);
+                                padding: 8px var(--small-gap);
+                                color: var(--dark-text);
+                            }
                         }
                     }
 
-                    .add-amount {
-                        outline: none;
-                        border: 2px solid var(--dark-3);
-                        padding: 4px 3px;
-                        margin-right: var(--small-gap);
-                        border-radius: var(--border-radius);
+
+                    .subcontent-wrapper {
+                        display: flex;
+                        flex-wrap: wrap;
+                        color: var(--text);
+                        gap: var(--small-gap);
+
+                        .sub-group {
+                            display: flex;
+                            flex-direction: column;
+                            color: var(--text);
+                            width: 0;
+                            min-width: 130px;
+                            gap: 4px;
+
+                            .sub-group-header {
+                                display: flex;
+                                align-items: center;
+                                gap: var(--small-gap);
+
+                                .bx {
+                                    color: var(--primary);
+                                }
+                            }
+    
+                            .sub-group-input {
+                                outline: none;
+                                background-color: transparent;
+                                border: 2px solid var(--dark-3);
+                                border-radius: var(--border-radius);
+                                padding: 8px var(--small-gap);
+                                color: var(--text);
+                            }
+                        }
+
+                        .subcontent {
+                            display: flex;
+                            flex-direction: column;
+
+                            border: 2px solid var(--dark-4);
+                            border-radius: var(--border-radius);
+
+                            padding: var(--small-gap);
+                            gap: var(--small-gap);
+
+                            .subcontent-head {
+                                color: var(--text);
+                            }
+
+                            .add-wrapper {
+                                display: flex;
+                                align-items: center;
+
+                                min-width: 250px;
+
+                                border: 2px solid var(--dark-3);
+                                border-radius: var(--border-radius);
+
+                                padding: 0 var(--small-gap);
+
+                                .add-button-2 {
+                                    display: flex;
+                                    gap: var(--small-gap);
+                                
+                                    padding: 5px;
+    
+                                    width: 100%;
+    
+                                    cursor: pointer;
+                                
+                                    span {
+                                        color: var(--dark-text);
+                                    }
+                                
+                                    .bx {
+                                        display: flex;
+                                        align-items: center;
+                                    }
+                                }
+                            }
+
+                            .subcontent-items {
+                                display: flex;
+                                flex-direction: column;
+
+                                gap: var(--small-gap);
+                                color: var(--text);
+
+                                padding-left: var(--small-gap);
+
+                                & > * {
+                                    position: relative;
+                                    display: flex;
+                                    gap: var(--gap);
+
+                                    &::before {
+                                        position: absolute;
+                                        top: calc(var(--small-gap) * -0.5);
+                                        bottom: calc(var(--small-gap) * -0.5);
+                                        left: -15px;
+                                        content: '';
+                                        width: 1px;
+                                        background-color: var(--secondary);
+                                    }
+                                }
+
+                                .subcontent-item {
+                                    color: var(--text);
+                                    background-color: var(--dark-4);
+                                    border-radius: var(--border-radius);
+                                    padding: 2px var(--gap) 2px 14px;
+                                    width: fit-content;
+                                    display: flex;
+                                    gap: var(--small-gap);
+
+                                    margin-left: 29px;
+                                }
+
+                                .subcontent-input {
+                                    color: var(--text);
+                                    background-color: var(--dark-4);
+                                    border: none;
+                                    border-radius: var(--border-radius);
+                                    padding: 2px var(--gap) 2px 14px;
+
+                                    display: flex;
+                                    gap: var(--small-gap);
+
+                                    margin-left: 29px; 
+
+                                    font-size: 16px;
+                                    font-family: 'Poppins';
+                                    font-weight: 400;
+                                    outline: none;
+
+                                    width: 100px;
+                                }
+                            }
+                        }
                     }
                 }
             }

@@ -199,12 +199,6 @@ saveButtonModal.addEventListener('click', () => {
       newItemDiv.appendChild(newExpirationText);
 
       newExpirationText.setAttribute("data-expiration", expirationValue);
-      
-
-      // const newExpirationContent = document.createElement("span");
-      // newExpirationContent.classList.add("expiration-content");
-      // newExpirationContent.innerHTML = expirationValue;
-      // newExpirationText.appendChild(newExpirationContent);
     }
 
     const selectedCategoryCard = document.querySelector(".category-card.selected");

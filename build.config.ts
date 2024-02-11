@@ -39,6 +39,8 @@ const filesConfig : esbuild.BuildOptions = {
   color: true,
   minify: !args.develope ?? true,
   outdir: './dist',
+  sourcemap: true,
+  sourcesContent: true,
   entryNames: '[dir]/bundle.min',
   entryPoints: [
     './src/**/index.ts',
