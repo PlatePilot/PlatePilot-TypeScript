@@ -29,4 +29,3 @@ jobs:
       
       - name: Run Linter
         run: deno task lint
-
