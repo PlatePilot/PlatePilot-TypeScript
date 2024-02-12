@@ -19,7 +19,8 @@
         "lib": [
             "ES6",
             "DOM",
-            "DOM.Iterable"
+            "DOM.Iterable",
+            "window"
         ]
     },
     "fmt": {
