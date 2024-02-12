@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.querySelector(`.fridge-content-container[data-category="${selectedCategory}"]`);
         if (container) {
           const containerRect = container.getBoundingClientRect();
-          const offset = containerRect.top + window.scrollY - wrapper.getBoundingClientRect().top - (wrapper.clientHeight - containerRect.height) / 2;
+          const offset = containerRect.top + globalThis.scrollY - wrapper.getBoundingClientRect().top - (wrapper.clientHeight - containerRect.height) / 2;
 
           wrapper.scrollTo({
             top: offset + wrapper.scrollTop,
