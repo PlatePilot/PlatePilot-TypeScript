@@ -5,26 +5,34 @@ changeGridButton?.addEventListener("click", () => {
     changeListButton?.classList.remove("selected");
     changeGridButton?.classList.add("selected")
 
-    const itemsWrapper = document.querySelector(".saveplates-wrapper") as HTMLElement;
-    const item = document.querySelector(".saveplates-item") as HTMLElement;
-
-    itemsWrapper.style.flexDirection = "row";
-    itemsWrapper.style.flexWrap = "wrap";
-
-    item.style.maxWidth = "225px"
+    const itemsWrapper = document.querySelectorAll(".saveplates-wrapper") as NodeListOf<HTMLElement>;
+    const items = document.querySelectorAll(".saveplates-item") as NodeListOf<HTMLElement>;
+    
+    itemsWrapper.forEach((element: HTMLElement) => {
+      element.style.flexDirection = "row";
+      element.style.flexWrap = "wrap";
+    });
+    
+    items.forEach((element: HTMLElement) => {
+      element.style.maxWidth = "225px"
+    });
 });
 
 changeListButton?.addEventListener("click", () => {
     changeGridButton?.classList.remove("selected");
     changeListButton?.classList.add("selected")
 
-    const itemsWrapper = document.querySelector(".saveplates-wrapper") as HTMLElement;
-    const item = document.querySelector(".saveplates-item") as HTMLElement;
-
-    itemsWrapper.style.flexDirection = "column";
-    itemsWrapper.style.flexWrap = "nowrap";
-    itemsWrapper.style.width = "100%"
-
-    item.style.width = "100%"
-    item.style.maxWidth = "none"
+    const itemsWrapper = document.querySelectorAll(".saveplates-wrapper") as NodeListOf<HTMLElement>;
+    const items = document.querySelectorAll(".saveplates-item") as NodeListOf<HTMLElement>;
+    
+    itemsWrapper.forEach((element: HTMLElement) => {
+      element.style.flexDirection = "column";
+      element.style.flexWrap = "nowrap";
+      element.style.width = "100%";
+    });
+    
+    items.forEach((element: HTMLElement) => {
+      element.style.width = "100%";
+      element.style.maxWidth = "none";
+    });
 });
