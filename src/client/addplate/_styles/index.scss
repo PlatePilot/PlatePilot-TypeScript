@@ -4,8 +4,6 @@
 
 .addplate {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     width: 100%;
 
     padding: var(--gap);
@@ -13,8 +11,7 @@
     height: 100%;
 
     .container {
-        width: 98%;
-
+        width: 100%;
         height: 100%;
 
         display: flex;
@@ -27,7 +24,7 @@
 
         .content-wrapper {
             width: 100%;
-
+            max-width: 1100px;
             background-color: var(--surface);
 
             border: 2px solid var(--dark-2);
@@ -152,12 +149,12 @@
                     display: flex;
                     gap: var(--gap);
                     flex-wrap: wrap;
+                    flex-direction: column;
                     
-                    .column-wrapper {
+                    .row-wrapper {
                         display: flex;
-                        flex-direction: column;
                         color: var(--text);
-                        gap: var(--small-gap);
+                        gap: var(--gap);
 
                         .sub-group {
                             display: flex;
@@ -181,7 +178,7 @@
 
                     .subcontent-wrapper {
                         display: flex;
-                        flex-wrap: wrap;
+                        flex-direction: column;
                         color: var(--text);
                         gap: var(--small-gap);
 
@@ -228,23 +225,17 @@
                             }
 
                             .add-wrapper {
-                                display: flex;
-                                align-items: center;
-
-                                min-width: 250px;
-
-                                border: 2px solid var(--dark-3);
-                                border-radius: var(--border-radius);
-
-                                padding: 0 var(--small-gap);
 
                                 .add-button-2 {
                                     display: flex;
                                     gap: var(--small-gap);
                                 
                                     padding: 5px;
-    
-                                    width: 100%;
+                                    
+                                    border: 2px solid var(--dark-3);
+                                    border-radius: var(--border-radius);
+
+                                    max-width: 200px;
     
                                     cursor: pointer;
                                 

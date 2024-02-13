@@ -97,15 +97,36 @@ body {
     height: fit-content;
 }
 
+.button-1 {
+    padding: 2px var(--small-gap);
+    font-weight: bold;
+    background-color: var(--primary);
+    border-radius: var(--border-radius);
+    color: var(--text-opposite);
+    cursor: pointer;
+    height: fit-content;
+}
+
+.button-2 {
+    color: var(--text);
+    border: 2px solid var(--primary);
+    border-radius: var(--border-radius);
+    padding: 2px var(--small-gap);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--small-gap);
+    height: fit-content;
+}
+
 .close-button {
     display: flex;
     align-items: center;
     background-color: var(--light-error);
-    padding: 2px 8px;
+    padding: 2px var(--small-gap);
     border-radius: var(--border-radius);
     color: var(--text-opposite);
     cursor: pointer;
-    font-size: 12px;
 }
 
 .dropdown-button {
@@ -175,6 +196,19 @@ body {
     border: none;
 
     outline: none;
+}
+
+.modal-info-item {
+    color: var(--dark-text);
+    border: 2px solid var(--dark-3);
+    padding: 2px var(--small-gap);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--small-gap);
+    height: fit-content;
+    width: fit-content;
 }
 
 // defined items end

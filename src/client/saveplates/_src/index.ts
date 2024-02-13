@@ -36,3 +36,26 @@ changeListButton?.addEventListener("click", () => {
       element.style.maxWidth = "none";
     });
 });
+
+const savePlateItems = document.querySelectorAll(".saveplates-item");
+
+savePlateItems.forEach(item => {
+  item.addEventListener("click", () => {
+    const clickedItemId = item.id;
+
+    const modalItemId = clickedItemId + "-modal";
+    const modalElement = document.getElementById(modalItemId);
+
+    if (modalElement) {
+      modalElement.style.display = "flex";
+
+      const closeButton = modalElement.querySelector(".close-button");
+
+      if (closeButton) {
+        closeButton.addEventListener("click", () => {
+          modalElement.style.display = "none";
+        });
+      }
+    }
+  });
+});
