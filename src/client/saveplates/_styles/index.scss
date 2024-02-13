@@ -136,6 +136,10 @@
                     padding: var(--small-gap);
                     gap: var(--small-gap);
 
+                    @media (max-width: 1100px) {
+                        min-width: 260px;
+                    }
+
                     .modal-info-content-head {
                         color: var(--text);
                         font-weight: bold;

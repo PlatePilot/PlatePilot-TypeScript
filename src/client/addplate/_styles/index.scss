@@ -312,113 +312,98 @@
                 }
             }
 
-            .description {
+            .description-addplate {
                 margin: var(--small-gap);
                 padding: var(--small-gap);
 
                 border: 2px solid var(--dark-3);
                 border-radius: var(--border-radius);
 
-                display: flex;
-                flex-direction: column;
+                .step-addplate {
+                    display: flex;
 
-                .des-content {
-                    padding: var(--small-gap);
+                    color: var(--text);
 
-                    .add-step-button {
-                        color: var(--dark-text);
-                        display: flex;
-                        align-items: center;
-                        gap: var(--small-gap);
+                    display: flex;
+                    gap: var(--big-gap);
 
-                        border: 2px solid var(--dark-3);
-                        border-radius: var(--border-radius);
-
-                        padding: 5px 15px;
-
-                        cursor: pointer;
-
-                        width: fit-content;
-                    }
-
-                    .step {
-                        color: var(--text);
-
-                        width: 100%;
-
-                        display: flex;
+                    @media (max-width:905px) {
                         flex-wrap: wrap;
-                        gap: var(--big-gap);
+                    }
+                    
+                    .step-info {
+                        display: flex;
+                        flex-direction: column;
 
-                        .step-info {
+                        gap: var(--gap);
+                        
+                        .add-step-button {
+                            color: var(--dark-text);
                             display: flex;
-                            flex-direction: column;
+                            align-items: center;
+                            gap: var(--small-gap);
 
-                            gap: var(--gap);
-
-                            .add-info-button {
-                                color: var(--dark-text);
-                                border: 2px solid var(--dark-3);
-                                border-radius: var(--border-radius);
-                                padding: 3px 10px;
-                                display: flex;
-                                align-items: center;
-                                gap: 2px;
-                                cursor: pointer;
-                            }
-
-                            .button-shrink {
-
-                                @media (max-width:905px) {
-                                    font-size: 8px;
-                                } 
-                            }
-
-                            .step-head {
-                                display: flex;
-                                flex-wrap: wrap;
-                                gap: var(--small-gap);
-                                border-bottom: 2px solid var(--dark-3);
-                                padding-bottom: var(--small-gap);
-
-                                .step-head-span {
-                                    display: flex;
-                                    align-items: end;
-
-                                    @media (max-width:905px) {
-                                        font-size: 12px;
-                                    }
-
-                                }
-
-                                .bx-icon {
-                                    display: flex;
-                                    align-items: center;
-                                    padding: 3px 6px 1px 6px;
-                                    border-radius: var(--border-radius);
-                                    cursor: pointer;
-
-                                    &:hover {
-                                        background-color: var(--dark-3);
-                                    }
-                                }
-                            }
-                        }
-
-                        .step-text {
-                            width: 60%;
-                            padding: var(--small-gap) var(--gap);
                             border: 2px solid var(--dark-3);
                             border-radius: var(--border-radius);
-                            height: fit-content;
+
+                            padding: 5px 15px;
+
+                            cursor: pointer;
+
+                            width: fit-content;
                         }
 
-                        .side-info {
-                            color: var(--primary);
-                            max-width: 140px;
+                        .add-info-button {
+                            color: var(--dark-text);
+                            border: 2px solid var(--dark-3);
+                            border-radius: var(--border-radius);
+                            padding: 3px 10px;
+                            display: flex;
+                            align-items: center;
+                            gap: 2px;
+                            cursor: pointer;
+                        }
+
+                        .step-head-addplate {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: var(--small-gap);
+                            border-bottom: 2px solid var(--dark-3);
+                            padding-bottom: var(--small-gap);
+
+                            .step-head-span {
+                                display: flex;
+                                align-items: end;
+                            }
+
+                            .bx-icon {
+                                display: flex;
+                                align-items: center;
+                                padding: 3px 6px 1px 6px;
+                                border-radius: var(--border-radius);
+                                cursor: pointer;
+
+                                &:hover {
+                                    background-color: var(--dark-3);
+                                }
+                            }
                         }
                     }
+
+                    .step-text {
+                        padding: var(--small-gap);
+                        border: 2px solid var(--dark-3);
+                        border-radius: var(--border-radius);
+                        height: fit-content;
+                        width: 100%;
+                    }
+
+                    .side-info {
+                        color: var(--primary);
+                        min-width: 150px;
+                    }
                 }
+            
             }
         }
 
@@ -435,7 +420,6 @@
                 display: none;
                 justify-content: space-between;
                 top: 0;
-                left: 30px;
                 width: 2px;
                 height: 100%;
                 background-color: var(--dark-2);
