@@ -152,7 +152,7 @@
                         gap: 4px;
                         color: var(--text);
 
-                        padding-left: var(--small-gap);
+                        padding-left: var(--big-gap);
 
                         & > * {
                             position: relative;
@@ -170,17 +170,35 @@
                             }
                         }
 
-                        .modal-info-item {
-                            border: 2px solid var(--dark-3);
-                            color: var(--text);
-                            background-color: var(--dark-4);
-                            border-radius: var(--border-radius);
-                            padding: 2px var(--gap) 2px 14px;
-                            width: fit-content;
+                        .modal-info-item-wrapper {
                             display: flex;
-                            gap: var(--small-gap);
+                            justify-content: space-between;
 
-                            margin-left: 20px;
+                            .modal-info-item {
+                                border: 2px solid var(--dark-3);
+                                color: var(--text);
+                                background-color: var(--dark-4);
+                                border-radius: var(--border-radius);
+                                padding: 2px var(--gap) 2px 14px;
+                                width: fit-content;
+                                display: flex;
+                                gap: var(--small-gap);
+                            }
+
+                            .add-tobuy-button {
+                                background-color: var(--dark-3);
+                                height: fit-content;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 2px 2px 2px 4px;
+                                border-radius: var(--border-radius);
+                                cursor: pointer;
+
+                                .bx {
+                                    font-size: 20px;
+                                }
+                            }
                         }
                     }
                 }
