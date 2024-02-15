@@ -79,9 +79,21 @@
                     border-radius: var(--border-radius);
                     height: 300px;
                     cursor: pointer;
+                    padding: var(--small-gap);
 
                     &:hover {
                         border: 2px solid var(--dark-2);
+                    }
+
+                    .week-header {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        color: var(--dark-text);
+
+                        .week-day {
+                            font-size: 14px;
+                        }
                     }
                 }
 
@@ -129,9 +141,40 @@
                     border: 2px solid var(--dark-3);
                     border-radius: var(--border-radius);
                     cursor: pointer;
+                    padding: var(--small-gap);
 
                     &:hover {
                         border: 2px solid var(--dark-2);
+                    }
+
+                    .month-header {
+                        display: flex;
+                        justify-content: center;
+
+                        .month-day {
+                            color: var(--dark-text);
+                        }
+
+                        .not-month-day {
+                            color: var(--dark-2);
+                        }
+                    }
+                }
+
+                .current-day {
+                    border: 2px solid var(--secondary);
+
+                    &:hover {
+                        border: 2px solid var(--primary);
+                    }
+
+                    .month-header {
+                        display: flex;
+                        justify-content: center;
+
+                        .month-day {
+                            color: var(--text);
+                        }
                     }
                 }
             }
