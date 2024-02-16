@@ -15,6 +15,7 @@ changeGridButton?.addEventListener("click", () => {
     
     items.forEach((element: HTMLElement) => {
       element.style.maxWidth = "225px"
+      element.style.width = "fit-content";
     });
 });
 

@@ -264,6 +264,8 @@
     .fridge-nav {
         width: 15%;
         min-width: 107px;
+        max-width: 150px;
+        height: fit-content;
 
         padding: var(--small-gap);
 
@@ -294,13 +296,10 @@
 
             gap: 3px;
 
-            @media (max-width: 845px) {
-                font-size: 14px;
-            }
-            @media (max-width: 745px) {
+            @media (max-width: 1050px) {
                 font-size: 12px;
             }
-            @media (max-width: 645px) {
+            @media (max-width: 915px) {
                 font-size: 10px;
             }
 
@@ -310,9 +309,13 @@
         }
 
         .add-item-wrapper {
-            margin-top: var(--big-gap);
+            margin: var(--gap) 0;
             display: flex;
             justify-content: center;
+
+            @media (max-width: 1050px) {
+                font-size: 12px;
+            }
         }
 
         .selected {
@@ -345,7 +348,7 @@
         flex-direction: column;
         width: 100%; 
 
-        padding-top: var(--gap);
+        padding: var(--gap);
         padding-bottom: 150px;
 
         gap: var(--gap);
@@ -356,7 +359,7 @@
 
         .fridge-content-container {
             height: fit-content;
-            width: 90%;
+            width: 100%;
 
             display: flex;
             flex-direction: column;
@@ -383,6 +386,23 @@
 
                 .bx {
                     font-size: 22px;
+                }
+
+                @media (max-width: 1050px) {
+                    
+                    .bx {
+                        font-size: 16px;
+                    }
+
+                    .material-symbols-rounded {
+                        font-size: 18px;
+                    }
+                }
+
+                h5 {
+                    @media (max-width: 1050px) {
+                        font-size: 14px;
+                    }
                 }
             }
 
