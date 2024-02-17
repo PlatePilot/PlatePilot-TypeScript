@@ -286,7 +286,7 @@
             padding: 5px;
             color: var(--dark-text);
 
-            width: fit-content;
+            width: 100%;
 
             border: 2px solid var(--dark-3);
             border-radius: var(--border-radius);
@@ -460,6 +460,14 @@
 
                         .bx {
                             color: var(--primary);
+                        }
+                    }
+
+                    .fridge-item-delete {
+                        cursor: pointer;
+
+                        .bx {
+                            color: var(--error);
                         }
                     }
                 }

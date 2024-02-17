@@ -313,11 +313,7 @@
             }
 
             .description-addplate {
-                margin: var(--small-gap);
-                padding: var(--small-gap);
-
-                border: 2px solid var(--dark-3);
-                border-radius: var(--border-radius);
+                padding: var(--gap);
 
                 .step-addplate {
                     display: flex;

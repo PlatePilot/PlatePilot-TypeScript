@@ -201,6 +201,11 @@ saveButtonModal.addEventListener('click', () => {
       newExpirationText.setAttribute("data-expiration", expirationValue);
     }
 
+    const deleteDiv = document.createElement("div");
+    deleteDiv.innerHTML = "<i class='bx bx-minus'></i>";
+    newItemDiv.appendChild(deleteDiv);
+    deleteDiv.className = "fridge-item-delete";
+
     const selectedCategoryCard = document.querySelector(".category-card.selected");
 
     if (selectedCategoryCard) {

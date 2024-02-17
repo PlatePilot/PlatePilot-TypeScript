@@ -391,8 +391,16 @@
                 .item-header {
                     font-weight: bold;
                     display: flex;
-                    align-items: center;
+                    gap: var(--small-gap);
                     padding: 2px var(--small-gap);
+
+                    .bx {
+                        align-self: center;
+                        padding: 4px;
+                        background-color: var(--dark-4);
+                        border-radius: var(--border-radius);
+                        cursor: pointer;
+                    }
                 }
 
                 .item-info-wrapper {
