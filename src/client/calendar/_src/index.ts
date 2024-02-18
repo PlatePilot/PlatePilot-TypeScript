@@ -1,74 +1,90 @@
-function getCurrentWeek(): string {
-    const today: Date = new Date();
-    const firstDayOfWeek: Date = new Date(today.getFullYear(), today.getMonth(), today.getDate() - today.getDay() + 1);
-    const lastDayOfWeek: Date = new Date(firstDayOfWeek);
-    lastDayOfWeek.setDate(lastDayOfWeek.getDate() + 6);
-    
-    return `${firstDayOfWeek.toLocaleDateString()} - ${lastDayOfWeek.toLocaleDateString()}`;
+// Function to calculate the current week (Monday to Sunday)
+function getCurrentWeek(): { firstDay: Date; lastDay: Date } {
+    const today = new Date();
+    // Adjust for ISO weekday offset (Monday is 0)
+    const dayOfWeek = (today.getDay() + 6) % 7;
+  
+    const firstDay = new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      today.getDate() - dayOfWeek
+    );
+    const lastDay = new Date(firstDay);
+    lastDay.setDate(lastDay.getDate() + 6);
+  
+    return { firstDay, lastDay };
   }
   
-function updateCalendarOnLoad(): void {
-    // update weekl
-    const currentWeekElement: HTMLSpanElement | null = document.getElementById("current-week");
-    const weekDayElements: NodeListOf<HTMLSpanElement> = document.querySelectorAll(".week-day");
-
-    const today: Date = new Date();
-
+  // Function to format date strings without weekday name
+  function formatDate(date: Date): string {
+    return date.toLocaleDateString('default', { year: 'numeric', month: 'numeric', day: 'numeric' });
+  }
+  
+  // Function to update the calendar on page load
+  function updateCalendarOnLoad(): void {
+    // Get elements
+    const currentWeekElement = document.getElementById("current-week");
+    const weekDayElements = document.querySelectorAll(".week-day");
+    const weekContainers = document.querySelectorAll(".week-container .week");
+    const currentMonthElement = document.querySelector(".current-month");
+    const monthContainers = document.querySelectorAll(".month-container .month");
+  
+    // Calculate current week and month
+    const { firstDay, lastDay } = getCurrentWeek();
+    const today = new Date();
+    const currentMonth = today.getMonth();
+  
+    // Update current week display
     if (currentWeekElement) {
-        currentWeekElement.innerHTML = getCurrentWeek();
+      currentWeekElement.textContent = `${formatDate(firstDay)} - ${formatDate(lastDay)}`;
     }
-
-    const weekContainers: NodeListOf<HTMLDivElement> = document.querySelectorAll(".week-container .week");
+  
+    // Update week containers
     weekContainers.forEach((week, index) => {
-        const currentDate: Date = new Date();
-        currentDate.setDate(currentDate.getDate() - currentDate.getDay() + index + 1);
-
-        const dayId: string = currentDate.toLocaleDateString().replace(/\./g, "-");
-        week.id = dayId;
-
-        const weekDaySpan: HTMLSpanElement | null = weekDayElements[index];
-        if (weekDaySpan) {
-        weekDaySpan.innerHTML = currentDate.toLocaleDateString();
-        if (currentDate.toDateString() === today.toDateString()) {
-            week.classList.add("current-day");
+      const day = new Date(firstDay);
+      day.setDate(day.getDate() + index);
+  
+      week.id = day.toLocaleDateString().replace(/\./g, "-");
+  
+      const weekDaySpan = weekDayElements[index];
+      if (weekDaySpan) {
+        weekDaySpan.textContent = formatDate(day);
+  
+        // Maintain highlighting for current day in week container
+        if (day.toDateString() === new Date().toDateString()) {
+          week.classList.add("current-day");
         }
+  
+        // Add class for days outside current month
+        if (day.getMonth() !== currentMonth) {
+          weekDaySpan.classList.add("not-month-day");
         }
+      }
     });
-
-    // update month
-    const currentMonthElement: HTMLSpanElement | null = document.querySelector(".current-month");
-    const monthContainers: NodeListOf<HTMLDivElement> = document.querySelectorAll(".month-container .month");
-
-    const firstDayOfMonth: Date = new Date(today.getFullYear(), today.getMonth(), 1);
-    const lastDayOfMonth: Date = new Date(today.getFullYear(), today.getMonth() + 1, 0);
-
+  
+    // Update current month display
     if (currentMonthElement) {
-        const monthName: string = today.toLocaleString('default', { month: 'long' });
-        currentMonthElement.innerHTML = `${monthName}, ${today.getFullYear()}`;
+      const monthName = today.toLocaleString('default', { month: 'long' });
+      currentMonthElement.textContent = `${monthName}, ${today.getFullYear()}`;
     }
-
+  
+    // Update month containers
     monthContainers.forEach((month, index) => {
-        const currentDate: Date = new Date(firstDayOfMonth);
-        currentDate.setDate(currentDate.getDate() + index);
-
-        const monthId: string = currentDate.toLocaleDateString().replace(/\./g, "-");
-        month.id = monthId;
-
-        if (index === today.getDate() - 1) {
-        month.classList.add("current-day");
-        }
-
-        const monthDaySpan: HTMLSpanElement | null = month.querySelector(".month-header .month-day");
-        if (monthDaySpan) {
-        monthDaySpan.innerHTML = currentDate.toLocaleDateString();
-
-        // day outside month
-        if (currentDate < firstDayOfMonth || currentDate > lastDayOfMonth) {
-            monthDaySpan.classList.add("not-month-day");
-        }
-        }
+      const day = new Date(today.getFullYear(), today.getMonth(), 1);
+      day.setDate(day.getDate() + index);
+  
+      month.id = day.toLocaleDateString().replace(/\./g, "-");
+  
+      if (day.getDate() === today.getDate()) {
+        month.classList.add("current-day"); // Highlight current day in month container
+      }
+  
+      const monthDaySpan = month.querySelector(".month-header .month-day");
+      if (monthDaySpan) {
+        monthDaySpan.textContent = formatDate(day);
+      }
     });
-}
+  }
   
-window.onload = updateCalendarOnLoad;
-  
+  // Run calendar update on page load
+  window.onload = updateCalendarOnLoad;  

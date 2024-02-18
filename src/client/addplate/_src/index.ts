@@ -152,3 +152,14 @@ initializeAddButton(addDrinkButton, drinkSubcontent);
 const addEquipmentButton = document.getElementById("add-equipment-button") as HTMLDivElement;
 const equipmentSubcontent = document.querySelector(".sub-equipment") as HTMLElement;
 initializeAddButton(addEquipmentButton, equipmentSubcontent);
+
+
+// vitamins selected 
+
+const vitaminItems = document.querySelectorAll(".sub-group-item");
+
+vitaminItems.forEach(item => {
+  item.addEventListener("click", () => {
+    item.classList.toggle("selected");
+  });
+});
