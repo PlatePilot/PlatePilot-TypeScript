@@ -7,7 +7,6 @@ for (const template of document.getElementsByTagName('template')) {
         .then(content => {
             const html = document.createElement('html');
             html.innerHTML = content;
-            console.dir(document.head)
             document.head.insertAdjacentHTML('afterend', html.getElementsByTagName('head')[0].innerHTML);
             template.insertAdjacentHTML('afterend', html.getElementsByTagName('body')[0].innerHTML);
     });

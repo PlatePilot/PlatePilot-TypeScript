@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+        <title>PlatePilot | Saved Plates</title>
+
+        <!-- script --> 
+        <script type="module" src="./_src/bundle.min.js" defer></script>
+        <script type="module" src="../_src/template.js" defer></script>
+
+        <!-- style -->
+        <link rel="stylesheet" href="./_styles/bundle.min.css">
+
+        <!-- icons -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    </head>
+    <body data-theme="dark">
+        <div class="login">
+            <div class="login-close" id="login-close" >Close</div>
+            <div class="login-container">
+                <div class="login-content">
+                    <div class="login-header">
+                        <span class="login-header-1">Plate Pilot</span>
+                        <span>Enter your key to log in</span>
+                    </div>
+                    <div class="login-item key-item">
+                        <span class="login-item-head">Your key</span>
+                        <input class="login-input" type="text" placeholder="Enter unique key">
+                    </div>
+                    <div class="login-done-button">Log In</div>
+                </div>
+            </div>
+        </>
+    </body>
+</html>
