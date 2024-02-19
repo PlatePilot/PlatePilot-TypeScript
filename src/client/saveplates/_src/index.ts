@@ -60,3 +60,25 @@ savePlateItems.forEach(item => {
     }
   });
 });
+
+// toggle schedule popover
+
+const scheduleButton = document.getElementById("schedule-button");
+
+scheduleButton?.addEventListener("click", () => {
+  const dateInput = document.getElementById("scheduleDateInput") as HTMLInputElement;
+
+  if (dateInput) {
+      dateInput.style.display = (dateInput.style.display === "none") ? "block" : "none";
+  }
+});
+
+const saveScheduleButton = document.getElementById("save-schedule-button");
+
+saveScheduleButton?.addEventListener("click", () => {
+  const dateInput = document.getElementById("scheduleDateInput") as HTMLInputElement;
+
+  if (dateInput) {
+      dateInput.style.display = (dateInput.style.display === "none") ? "block" : "none";
+  }
+});

@@ -30,7 +30,13 @@
                         </div>
                     </div>
                     <div class="modal-top-right">
-                        <div class="button-2"><i class='bx bx-calendar'></i>Schedule</div>
+                        <div class="schedule-button-wrapper">
+                            <div class="button-2" id="schedule-button"><i class='bx bx-calendar'></i>Schedule</div>
+                            <div class="schedule-input-save-wrapper" id="scheduleDateInput" style="display: none;">
+                                <input type="date" class="scheduleInput">
+                                <div id="save-schedule-button" class="save-button">Save</div>
+                            </div>
+                        </div>
                         <div class="modal-info-item"><i class='bx bx-info-circle'></i>Dates</div>
                         <div class="close-button">Close</div>
                     </div>
@@ -40,9 +46,7 @@
                         <div class="content-info-top">
                             <div class="portions-wrapper">
                                 <input class="portions-input" type="number" value="4">
-                                <span class="portions-text"><span class="material-symbols-outlined">
-                                    sync
-                                </span>Portions</span>
+                                <span class="portions-text"><span class="material-symbols-outlined">sync</span>Portions</span>
                             </div>
                             <div class="modal-info-item"><i class='bx bx-info-circle'></i>Nutrition</div>
                         </div>
@@ -184,7 +188,7 @@
                 </div>
                 <div class="saveplates-wrapper">
                     <div class="saveplates-item" id="dsfn234gfdlkj">
-                        <div class="item-header"><span>Kartoffelbrei und Lachs</span><i class='bx bx-edit-alt'></i></div>
+                        <div class="item-header"><span>Kartoffelbrei und Lachs</span><a href="./../editplate/"><i class='bx bx-edit-alt'></i></a></div>
                         <div class="item-info-wrapper">
                             <span class="item-info">5:15h</span>
                             <span class="item-info">medium</span>

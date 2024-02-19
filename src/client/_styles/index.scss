@@ -116,6 +116,9 @@ body {
     align-items: center;
     gap: var(--small-gap);
     height: fit-content;
+    background-color: var(--surface);
+    font-size: 16px;
+    font-family: 'Poppins';
 }
 
 .close-button {

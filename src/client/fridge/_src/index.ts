@@ -202,7 +202,7 @@ saveButtonModal.addEventListener('click', () => {
     }
 
     const deleteDiv = document.createElement("div");
-    deleteDiv.innerHTML = "<i class='bx bx-minus'></i>";
+    deleteDiv.innerHTML = "<i class='bx bx-x'></i>";
     newItemDiv.appendChild(deleteDiv);
     deleteDiv.className = "fridge-item-delete";
 

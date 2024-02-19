@@ -465,9 +465,12 @@
 
                     .fridge-item-delete {
                         cursor: pointer;
+                        display: flex;
+                        align-items: center;
 
                         .bx {
                             color: var(--error);
+                            font-size: 21px;
                         }
                     }
                 }

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=0.9"> 
+        <link rel="shortcut icon" href="" type="image/x-icon">
+        <title>PlatePilot | Edit (insert plate name)</title>
+
+        <!-- script -->
+        <script type="module" src="./_src/bundle.min.js" defer></script> 
+        <script type="module" src="../_src/template.js" defer></script>
+
+        <!-- style -->
+        <link rel="stylesheet" href="./_styles/bundle.min.css">
+
+        <!-- icons -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body data-theme="dark">
+        <section class="addplate">
+            <div class="container">
+                <section class="content-wrapper">
+                    <div class="content-header">
+                        <span>Add New Plate</span>
+                        <a href="./../saveplates/" class="save-button">Save</a>
+                    </div>
+                    <div class="content">
+                        <div class="top-wrapper">
+                            <div class="sub-group">
+                                <span>Plate Name</span>
+                                <input class="sub-group-input" type="text" value="">
+                            </div>
+                            <div class="sub-group">
+                                <span>Date</span>
+                                <input class="sub-group-input" type="date" value="">
+                            </div>
+                        </div>
+                        <div class="time-difficulty-wrapper">
+                            <div class="wrapper">
+                                <div class="sub-group">
+                                    <div class="sub-group-header"><i class='bx bx-time'></i><span>Working time</span></div>
+                                    <div class="sub-group-input-wrapper">
+                                        <input class="sub-group-input" type="number" value="60">
+                                        <span>minutes</span>
+                                    </div>
+                                </div>
+                                <div class="sub-group">
+                                    <div class="sub-group-header"><i class='bx bx-time'></i><span>Cooking / Baking time</span></div>
+                                    <div class="sub-group-input-wrapper">
+                                        <input class="sub-group-input" type="number" value="60">
+                                        <span>minutes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrapper">
+                                <div class="sub-group">
+                                    <div class="sub-group-header"><i class='bx bx-time'></i><span>Rest time</span></div>
+                                    <div class="sub-group-input-wrapper">
+                                        <input class="sub-group-input" type="number" value="60">
+                                        <span>minutes</span>
+                                    </div>
+                                </div>
+                                <div class="sub-group">
+                                    <div class="sub-group-header"><i class='bx bx-cog'></i><span>Difficutly</span></div>
+                                    <div class="sub-group-input-wrapper">
+                                        <select class="sub-group-input" name="Difficutly" id="">
+                                            <option value="easy">easy</option>
+                                            <option value="medium">medium</option>
+                                            <option value="hard">hard</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-wrapper">
+                            <div class="row-wrapper">
+                                <div class="sub-group">
+                                    <span>Portions</span>
+                                    <input class="sub-group-input" type="number" value="4">
+                                </div>
+                                <div class="sub-group">
+                                    <span>Kcal per portion</span>
+                                    <input class="sub-group-input" type="number" value="0">
+                                </div>
+                                <div class="sub-group">
+                                    <span>Proteins</span>
+                                    <input class="sub-group-input" type="number" value="0">
+                                </div>
+                                <div class="sub-group">
+                                    <span>Fat</span>
+                                    <input class="sub-group-input" type="number" value="0">
+                                </div>
+                                <div class="sub-group">
+                                    <span>Vitamins</span>
+                                    <div class="choose">
+                                        <div class="sub-group-item">D</div>
+                                        <div class="sub-group-item">B12</div>
+                                        <div class="sub-group-item">K</div>
+                                        <div class="sub-group-item">A</div>
+                                        <div class="sub-group-item">C</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="subcontent-wrapper">
+                                <div class="subcontent">
+                                    <span class="subcontent-head">Ingredients</span>
+                                    <div class="add-wrapper">
+                                        <div id="add-ingredient-button" class="add-button-2"><i class='bx bx-plus'></i><span>Add Ingredient</span></div>
+                                    </div>
+                                    <div class="subcontent-items sub-ingredient">
+                                    </div>
+                                </div>
+                                <div class="subcontent">
+                                    <span class="subcontent-head">Drinks</span>
+                                    <div class="add-wrapper">
+                                        <div id="add-drink-button" class="add-button-2"><i class='bx bx-plus'></i><span>Add Ingredient</span></div>
+                                    </div>
+                                    <div class="subcontent-items sub-drink"></div>
+                                </div>
+                                <div class="subcontent">
+                                    <span class="subcontent-head">Equipment</span>
+                                    <div class="add-wrapper">
+                                        <div id="add-equipment-button" class="add-button-2"><i class='bx bx-plus'></i><span>Add Ingredient</span></div>
+                                    </div>
+                                    <div class="subcontent-items sub-equipment"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="addplate-button-container">
+                    <div class="connector"></div>
+                    <div id="addplatedescription" class="addplate-button"><i class='bx bx-plus'></i><span>Add Plate Descirption</span></div>
+                </section>
+                <section class="content-wrapper plate-description">
+                    <div class="content-header">
+                        <span>Plate Description</span>
+                        <div id="closeplatedescription" class="close-button">Close</div>
+                    </div>
+                    <div class="description-addplate">
+                        <div class="step-addplate">
+                            <div class="step-info side-info">
+                                <div class="add-step-button"><i class='bx bx-plus'></i>Add Step</div>
+                                <div class="step-head-addplate">1. Step</div>
+                                <small class="add-info-button"><i class='bx bx-plus'></i>Add Heading</small>
+                                <small class="add-info-button"><i class='bx bx-plus'></i>Add info</small>
+                            </div>
+                            <div class="step-info step-text">
+                                <div class="step-head-addplate">
+                                    <span class="step-head-span">1. Step Description</span>
+                                    <small class="add-info-button"><i class='bx bx-plus'></i>Add Time</small>
+                                    <small class="add-info-button"><i class='bx bx-plus'></i>Add Ingredient</small>
+                                    <span class="bx-icon"><i class='bx bx-bold'></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </body>
+</html>

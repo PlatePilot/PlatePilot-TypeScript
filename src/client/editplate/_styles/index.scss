@@ -1,0 +1,15 @@
+@import "./../../addplate/_styles/index.scss";
+
+.content-wrapper {
+    box-shadow: 0 0 10px 5px var(--dark-4);
+
+    .content-header {
+
+        a {
+            color: var(--text-opposite);
+            &:hover {
+                color: var(--text-opposite);
+            }
+        }
+    }
+}
